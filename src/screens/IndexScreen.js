@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, FlatList,Button } from 'react-native'
 import {Context} from '../context/BlogContext'
 const IndexScreen = () => {
 
-    const {state,addBlogPost} = useContext(Context)
+    const {state,addBlogPost,deleteBlogPost} = useContext(Context)
     return(
         <View>
             
@@ -14,7 +14,7 @@ const IndexScreen = () => {
                 renderItem = {({item})=>{
                     return <View style={styles.row}>
                                 <Text style={styles.title}>{item.title}</Text>
-                                <Button  style={styles.icon} title="trash"/>
+                                <Button  onPress={()=> deleteBlogPost(item.id)} style={styles.icon} title="trash"/>
                             </View>
                 }}
             />
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'space-between',
         paddingVertical:20,
+        paddingHorizontal:10,
         borderTopWidth:1,
         borderColor:'gray'
     },
