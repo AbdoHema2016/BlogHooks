@@ -194,7 +194,6 @@
 				3FC0B9BB64AE915FFAC8BD05 /* Pods-blogTests.debug.xcconfig */,
 				B72BE8348466A614322FDB72 /* Pods-blogTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -308,6 +307,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

@@ -6,21 +6,37 @@ const IndexScreen = () => {
     const {state,addBlogPost} = useContext(Context)
     return(
         <View>
-            <Text>
-                IndexScreen 
-            </Text>
+            
             <Button title="Add Post" onPress={addBlogPost}/>
             <FlatList 
                 data = {state}
                 keyExtractor = {(blogPost) => blogPost.title}
                 renderItem = {({item})=>{
-                    return <Text>{item.title}</Text>
+                    return <View style={styles.row}>
+                                <Text style={styles.title}>{item.title}</Text>
+                                <Button  style={styles.icon} title="trash"/>
+                            </View>
                 }}
             />
         </View>
     )
 }
 const styles = StyleSheet.create({
+
+    row:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        paddingVertical:20,
+        borderTopWidth:1,
+        borderColor:'gray'
+    },
+    title:{
+        fontSize:18,
+    
+    },
+    icon:{
+        fontSize:24
+    }
 
 })
 export default IndexScreen
